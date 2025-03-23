@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoHive - Sustainable Living</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #fff;
+        color: #333;
+        line-height: 1.6;
+        
+      }
+
+      .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 15px 0;
+      }
+        
+      nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      
+      .logo {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: #1e6d3f;
+          font-weight: bold;
+          font-size: 24px;
+      }
+      
+      .logo img {
+          height: 40px;
+          margin-right: 3px;
+      }
+      
+      .menu {
+          display: flex;
+          list-style: none;
+      }
+      
+      .menu li {
+          margin-left: 25px;
+      }
+      
+      .menu a {
+          text-decoration: none;
+          color: #333;
+          font-size: 15px;
+          transition: color 0.3s;
+      }
+      
+      .menu a:hover {
+          color: #09b250;
+      }
+      
+      .menu a.active {
+          color: #0e5a2c;
+          font-weight: bolder;
+      }
+
+      .hero {
+        position: relative;
+        height: 90vh;
+        background-image: url("img/Home/Home_bg.png");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 7%;
+        color: white;
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-content p {
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        max-width: 600px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 24px;
+        background-color: #1e5f41;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #164730;
+      }
+
+      .sustainable-section {
+        padding: 80px 7%;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .image-collage {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+      }
+
+      .collage-img {
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .collage-img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .sustainable-content {
+        flex: 1;
+      }
+
+      .with-us {
+        color: #1e5f41;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .sustainable-content h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .butterfly-icon {
+        width: 30px;
+        vertical-align: middle;
+      }
+
+      .sustainable-content p {
+        margin-bottom: 20px;
+        color: #555;
+      }
+       
+      .feature-list {
+        list-style: none;
+      }
+
+      .feature-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .feature-list li:before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: #1e5f41;
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+
+      .mindful-section {
+        padding: 50px 7%;
+        position: relative;
+      }
+
+      .leaf-decoration {
+        position: absolute;
+        width: 80px;
+        opacity: 0.9;
+      }
+
+      .leaf-left {
+        left: 0;
+        top: 50px;
+      }
+
+      .leaf-right {
+        right: 0;
+        bottom: -50px;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .section-header h5 {
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .section-header h2 {
+        font-size: 32px;
+      }
+
+      .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .tip-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .tip-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .tip-img {
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .tip-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .tip-content {
+        padding: 15px;
+      }
+
+      .tip-content h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+        line-height: 1.4;
+      }
+
+      .view-more {
+        text-align: right;
+        margin-top: 20px;
+      }
+
+      .view-more a {
+        color: #1e5f41;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .reviews-section {
+        padding: 60px 7%;
+        text-align: center;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .review-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 30px 20px;
+        text-align: left;
+        position: relative;
+      }
+
+      .green-dot {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        background-color: #1e5f41;
+        border-radius: 50%;
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .reviewer-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .reviewer-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .reviewer-name {
+        font-weight: 600;
+      }
+
+      .review-text {
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .stars {
+        display: flex;
+        gap: 5px;
+      }
+
+      .stars img {
+        width: 80px;
+        height: 15px;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ddd;
+      }
+
+      .dot.active {
+        background-color: #1e5f41;
+      }
+
+      .navigation-arrows {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .arrow {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+
+      .community-section {
+        background-color: #d8e7d8;
+        padding: 60px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .community-content {
+        flex: 1;
+      }
+
+      .community-content h2 {
+        color: #1e5f41;
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      .community-content p {
+        margin-bottom: 25px;
+        max-width: 500px;
+      }
+
+      .email-form {
+        display: flex;
+        gap: 10px;
+        max-width: 400px;
+      }
+
+      .email-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .submit-btn {
+        padding: 12px 25px;
+        background-color: #1e5f41;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #164730;
+      }
+
+      .community-image {
+        flex: 1;
+        max-width: 400px;
+        text-align: right;
+      }
+
+      .community-image img {
+        max-width: 100%;
+      }
+
+      footer {
+        background-color: #d8e7d8;
+        padding: 20px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #d0e6d9;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-link {
+        color: #555;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .copyright {
+        font-size: 12px;
+        color: #777;
+      }
+
+      @media (max-width: 992px) {
+        .sustainable-section {
+          flex-direction: column;
+        }
+
+        .tips-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .reviews-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .community-section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .email-form {
+          margin: 0 auto;
+        }
+
+        .community-image {
+          margin-top: 30px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          gap: 15px;
+        }
+
+        .hero-content h1 {
+          font-size: 32px;
+        }
+
+        .reviews-grid {
+          grid-template-columns: 1fr;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .tips-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .email-form {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+          <nav>
+              <a href="#" class="logo">
+                  <img src="./img/logo.png" alt="EcoHive logo">
+                  EcoHive
+              </a>
+              <ul class="menu">
+                  <li><a href="#" class="active">Home</a></li>
+                  <li><a href="Tips.html">Tips</a></li>
+                  <li><a href="Challenges.html">Challenges</a></li>
+                  <li><a href="Resources.html">Resources</a></li>
+                  <li><a href="login.html">Log in</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Ready to Make a Difference?</h1>
+        <p>
+          At EcoHive, every small step matters. Join us in creating a cleaner,
+          greener, and more sustainable world—one choice at a time.
+        </p>
+        <a href="#" class="btn">Learn more</a>
+      </div>
+    </section>
+
+    <section class="sustainable-section">
+      <div class="image-collage">
+        <div class="collage-img">
+          <img src="img/Home/home2.png" alt="Sustainable tableware" />
+        </div>
+      </div>
+      <div class="sustainable-content">
+        <span class="with-us">With us</span>
+        <h2>
+          Elevate Your Lifestyle with Sustainable Solutions
+          <img src="img/Home/butterfly.png" alt="" class="butterfly-icon" />
+        </h2>
+        <p>
+          EcoHive empowers you to seamlessly integrate eco-friendly practices
+          into your daily life:
+        </p>
+        <ul class="feature-list">
+          <li>Easy-to-follow tips to reduce your environmental impact</li>
+          <li>Interactive challenges that inspire sustainable habits</li>
+          <li>Curated resources for making greener choices</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mindful-section">
+      <img src="img/Home/leaves.png" alt="" class="leaf-decoration leaf-left" />
+
+      <div class="section-header">
+        <h5>Tips for</h5>
+        <h2>Mindful Living</h2>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-img">
+            <img src="img/Home/sunscreen.png" alt="Natural sunscreen" />
+          </div>
+          <div class="tip-content">
+            <h3>10 Best Natural Sunscreens For Your Face</h3>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-img">
+            <img src="img/Home/yoga.png" alt="Wellness routine" />
+          </div>
+          <div class="tip-content">
+            <h3>How To Build A Midday Wellness Routine</h3>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-img">
+            <img src="img/Home/artisians.png" alt="Local artisans" />
+          </div>
+          <div class="tip-content">
+            <h3>10 Ways to Support Local Artisans and Crafts</h3>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-img">
+            <img src="img/Home/receipes.png" alt="Seasonal recipes" />
+          </div>
+          <div class="tip-content">
+            <h3>Simple Seasonal Recipes For Eco-Conscious Foodies</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-more">
+        <a href="#">View more</a>
+      </div>
+
+      <img src="img/Home/leaves2.png" alt="" class="leaf-decoration leaf-right" />
+    </section>
+
+    <section class="reviews-section">
+      <h2>Customer Reviews</h2>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="green-dot"></div>
+          <div class="reviewer">
+            <div class="reviewer-img">
+              <img src="img/Home/c1.png" alt="Sarah Johnson" />
+            </div>
+            <div class="reviewer-name">Sarah Johnson</div>
+          </div>
+          <p class="review-text">
+            "I absolutely love my Organic Tote Bag from Greenly! It's not only
+            stylish but also eco-friendly. Knowing that I'm making a positive
+            impact on the environment with each use makes me feel good about my
+            choices. Highly recommend this sustainable accessory!"
+          </p>
+          <div class="stars">
+            <img src="img/Home/stars.png" alt="5 stars" />
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="green-dot"></div>
+          <div class="reviewer">
+            <div class="reviewer-img">
+              <img src="img/Home/c2.png" alt="Mark Anderson" />
+            </div>
+            <div class="reviewer-name">Mark Anderson</div>
+          </div>
+          <p class="review-text">
+            "The Bamboo Toothbrushes from Greenly are a game-changer! The
+            quality is outstanding, and I love the fact that they are made from
+            renewable bamboo. My old non-recycled plastic toothbrushes were
+            causing guilt every time I had to dispose of them. Kudos to Greenly
+            for offering such fantastic eco-friendly products!"
+          </p>
+          <div class="stars">
+            <img src="img/Home/stars.png" alt="5 stars" />
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="green-dot"></div>
+          <div class="reviewer">
+            <div class="reviewer-img">
+              <img src="img/Home/c3.png" alt="Emily Lee" />
+            </div>
+            <div class="reviewer-name">Emily Lee</div>
+          </div>
+          <p class="review-text">
+            "I recently bought the Hemp Backpack from Greenly, and I must say
+            it's a fantastic investment. The durability of the hemp material is
+            impressive, and I find myself receiving compliments on its unique
+            appearance. This backpack is perfect for my outdoor adventures and
+            daily commutes. Thanks a lot for the eco-conscious design!"
+          </p>
+          <div class="stars">
+            <img src="img/Home/stars.png" alt="5 stars" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <div class="dot"></div>
+        <div class="dot active"></div>
+        <div class="dot"></div>
+      </div>
+
+      <div class="navigation-arrows">
+        <img src="img/Home/left.png" alt="Previous" class="arrow" />
+        <img src="img/Home/right.png" alt="Next" class="arrow" />
+      </div>
+    </section>
+
+    <section class="community-section">
+      <div class="community-content">
+        <h2>join the community</h2>
+        <p>
+          Here's your chance to be part of a life-changing mission—embrace
+          sustainability and make a lasting impact ✨
+        </p>
+        <div class="email-form">
+          <input type="email" placeholder="Email address" class="email-input" />
+          <button class="submit-btn">Join now</button>
+        </div>
+      </div>
+      <div class="community-image">
+        <img src="img/Home/footer.png" alt="Sustainable community" />
+      </div>
+    </section>
+
+    <footer>
+      <div class="social-icons">
+        <a href="#"
+          ><img src="img/Home/facebook.png" alt="Facebook" class="social-icon"
+        /></a>
+        <a href="#"
+          ><img src="img/Home/twitter.png" alt="Twitter" class="social-icon"
+        /></a>
+        <a href="#"
+          ><img src="img/Home/pinterest.png" alt="Pinterest" class="social-icon"
+        /></a>
+        <a href="#"
+          ><img src="img/Home/instagram.png" alt="Instagram" class="social-icon"
+        /></a>
+      </div>
+      <div class="copyright">© 2025 EcoHive all right reserved</div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Terms and conditions</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+    </footer>
+  </body>
+</html>

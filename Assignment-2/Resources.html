@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoHive - Resources</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #fff;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 15px 0;
+      }
+        
+      nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      
+      .logo {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: #1e6d3f;
+          font-weight: bold;
+          font-size: 24px;
+      }
+      
+      .logo img {
+          height: 40px;
+          margin-right: 3px;
+      }
+
+      .login-btn {
+        background-color: transparent;
+        border: none;
+        color: #1e5f41;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 1.2rem;
+        text-decoration: none;
+      }
+      .menu {
+          display: flex;
+          list-style: none;
+      }
+      
+      .menu li {
+          margin-left: 25px;
+      }
+      
+      .menu a {
+          text-decoration: none;
+          color: #333;
+          font-size: 15px;
+          transition: color 0.3s;
+      }
+      
+      .menu a:hover {
+          color: #1e6d3f;
+      }
+      
+      .menu a.active {
+        color: #0e5a2c;
+        font-weight: bolder;
+      }
+
+      .hero {
+        position: relative;
+        height: 350px;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding: 7%;
+        color: white;
+      }
+
+      .hero-content {
+        max-width: 480px;
+      }
+
+      .hero-content h1 {
+        font-size: 30px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+
+      .shop-now-btn {
+        display: inline-block;
+        padding: 10px 24px;
+        background-color: #1e5f41;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .shop-now-btn:hover {
+        background-color: #164730;
+      }
+
+      .topics-section {
+        padding: 50px 7%;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
+
+      .topics-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .topic-card {
+        text-align: center;
+      }
+
+      .topic-img {
+        width: 140px;
+        aspect-ratio: 1/1;
+        margin: 0 auto 10px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .topic-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .topic-title {
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .big-savings {
+        background-color: #d8e7d8;
+        padding: 40px 7% 120px 7%;
+        text-align: center;
+        position: relative;
+      }
+
+      .big-savings h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .big-savings p {
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .offer-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .offer-img {
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .offer-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .offer-badge {
+        width: 100%;
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        padding: 10px 15px;
+        font-weight: 600;
+      }
+
+      .offer-badge span {
+        display: block;
+        font-size: 12px;
+        opacity: 0.8;
+      }
+
+      .leaf-decoration {
+        position: absolute;
+        width: 80px;
+        opacity: 0.9;
+      }
+
+      .leaf-right {
+        right: 0px;
+        bottom: 10px;
+      }
+
+      .products-section {
+        padding: 50px 7%;
+      }
+
+      .products-title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+
+      .product-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .product-img {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-info {
+        padding: 15px;
+      }
+
+      .product-title {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .product-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .current-price {
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .original-price {
+        font-size: 14px;
+        color: #999;
+        text-decoration: line-through;
+      }
+
+      .reviews {
+        font-size: 12px;
+        color: #777;
+      }
+
+      .buy-btn {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color: #1e5f41;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .buy-btn:hover {
+        background-color: #164730;
+      }
+
+      .explore-more {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .explore-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .explore-more-btn:hover {
+        background-color: #555;
+      }
+
+      .community-section {
+        background-color: #d8e7d8;
+        padding: 60px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .community-content {
+        flex: 1;
+      }
+
+      .community-content h2 {
+        color: #1e5f41;
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      .community-content p {
+        margin-bottom: 25px;
+        max-width: 500px;
+      }
+
+      .email-form {
+        display: flex;
+        gap: 10px;
+        max-width: 400px;
+      }
+
+      .email-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .submit-btn {
+        padding: 12px 25px;
+        background-color: #1e5f41;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #164730;
+      }
+
+      .community-image {
+        flex: 1;
+        max-width: 400px;
+        text-align: right;
+      }
+
+      .community-image img {
+        max-width: 100%;
+      }
+
+      footer {
+        background-color: #d8e7d8;
+        padding: 20px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #c5d8c5;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-link {
+        color: #555;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .copyright {
+        font-size: 12px;
+        color: #777;
+      }
+
+      @media (max-width: 992px) {
+        .topics-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+
+        .offers-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .community-section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .email-form {
+          margin: 0 auto;
+        }
+
+        .community-image {
+          margin-top: 30px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          gap: 15px;
+        }
+
+        .hero {
+          height: 250px;
+        }
+
+        .hero-content h1 {
+          font-size: 26px;
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .topics-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .offers-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .email-form {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="./img/logo.png" alt="EcoHive logo">
+                    EcoHive
+                </a>
+                <ul class="menu">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Tips.html">Tips</a></li>
+                    <li><a href="Challenges.html">Challenges</a></li>
+                    <li><a href="#" class="active">Resources</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: url('img/Resources/Resources_bg.png')">
+      <div class="hero-content">
+        <h1>SUSTAINABLE LIVING IS EASY</h1>
+      </div>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </section>
+
+    <section class="topics-section">
+      <h2 class="section-title">EXPLORE TOPICS</h2>
+
+      <div class="topics-grid">
+        <div class="topic-card">
+          <div class="topic-img">
+            <img src="img/Resources/sustainable home.png" alt="Sustainable Home" />
+          </div>
+          <h3 class="topic-title">SUSTAINABLE HOME</h3>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-img">
+            <img src="img/Resources/eco guide.png" alt="Eco Guides" />
+          </div>
+          <h3 class="topic-title">ECO GUIDES</h3>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-img">
+            <img src="img/Resources/sustainable_fasshion.png" alt="Sustainable Fashion" />
+          </div>
+          <h3 class="topic-title">SUSTAINABLE FASHION</h3>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-img">
+            <img src="img/Resources/food.png" alt="Food" />
+          </div>
+          <h3 class="topic-title">FOOD</h3>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-img">
+            <img src="img/Resources/home.png" alt="Decor" />
+          </div>
+          <h3 class="topic-title">DECOR</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="big-savings">
+      <h2>Big Savings. Big Offers</h2>
+      <p>Good For You, Good For The Wallet, Good For The Planet</p>
+
+      <div class="offers-grid">
+        <div class="offer-card">
+          <div class="offer-img">
+            <img src="img/Resources/bigsaving_1.png" alt="Sunscreen" />
+          </div>
+          <div class="offer-badge">
+            UPTO 50% OFF
+            <span>SUNSCREEN</span>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-img">
+            <img src="img/Resources/bigsaving_2.png" alt="Suits" />
+          </div>
+          <div class="offer-badge">
+            UPTO 30% OFF
+            <span>SUITS</span>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-img">
+            <img src="img/Resources/bigsaving_4.png" alt="Sunscreen" />
+          </div>
+          <div class="offer-badge">
+            UPTO 40% OFF
+            <span>NECKLACE</span>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-img">
+            <img src="img/Resources/bigsaving_3.png" alt="Stationery" />
+          </div>
+          <div class="offer-badge">
+            UPTO 30% OFF
+            <span>STATIONERY</span>
+          </div>
+        </div>
+      </div>
+
+      <img src="img/Resources/leaves2.png" alt="" class="leaf-decoration leaf-right" />
+    </section>
+
+    <section class="products-section">
+      <h2 class="products-title">Our Best-Selling Sustainable Products</h2>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="img/Resources/bestselling1.png" alt="Organic cotton tote bag" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Organic cotton tote bag</h3>
+            <div class="product-price">
+              <div>
+                <span class="current-price">50 Rs.</span>
+                <span class="original-price">70 Rs.</span>
+              </div>
+              <span class="reviews">235 Reviews</span>
+            </div>
+            <a href="#" class="buy-btn">Buy now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="img/Resources/bestselling2.png" alt="Hemp backpack" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Hemp backpack</h3>
+            <div class="product-price">
+              <div>
+                <span class="current-price">999 Rs.</span>
+                <span class="original-price">1199 Rs.</span>
+              </div>
+              <span class="reviews">729 Reviews</span>
+            </div>
+            <a href="#" class="buy-btn">Buy now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="img/Resources/bestselling3.png" alt="Organic cotton T-shirts" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Organic cotton T-shirts</h3>
+            <div class="product-price">
+              <div>
+                <span class="current-price">499 Rs.</span>
+                <span class="original-price">699 Rs.</span>
+              </div>
+              <span class="reviews">825 Reviews</span>
+            </div>
+            <a href="#" class="buy-btn">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="img/Resources/bestselling4.png" alt="Bamboo toothbrush" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Bamboo toothbrush</h3>
+            <div class="product-price">
+              <div>
+                <span class="current-price">99 Rs.</span>
+                <span class="original-price">149 Rs.</span>
+              </div>
+              <span class="reviews">248 Reviews</span>
+            </div>
+            <a href="#" class="buy-btn">Buy now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="img/Resources/bestselling5.png" alt="Bamboo pens and pencils" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Bamboo pens and pencils</h3>
+            <div class="product-price">
+              <div>
+                <span class="current-price">49 Rs.</span>
+                <span class="original-price">89 Rs.</span>
+              </div>
+              <span class="reviews">1256 Reviews</span>
+            </div>
+            <a href="#" class="buy-btn">Buy now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="img/Resources/bestselling6.png" alt="Jute grocery bag" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Jute grocery bag</h3>
+            <div class="product-price">
+              <div>
+                <span class="current-price">59 Rs.</span>
+                <span class="original-price">89 Rs.</span>
+              </div>
+              <span class="reviews">895 Reviews</span>
+            </div>
+            <a href="#" class="buy-btn">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="explore-more">
+        <a href="#" class="explore-more-btn">Explore more</a>
+      </div>
+    </section>
+
+    <section class="community-section">
+      <div class="community-content">
+        <h2>join the community</h2>
+        <p>
+          Here's your chance to be part of a life-changing mission—embrace
+          sustainability and make a lasting impact ✨
+        </p>
+        <div class="email-form">
+          <input type="email" placeholder="Email address" class="email-input" />
+          <button class="submit-btn">Join now</button>
+        </div>
+      </div>
+      <div class="community-image">
+        <img src="img/Resources/footer.png" alt="Sustainable community" />
+      </div>
+    </section>
+
+    <footer>
+      <div class="social-icons">
+        <a href="#"
+          ><img src="img/Resources/facebook.png" alt="Facebook" class="social-icon"
+        /></a>
+        <a href="#"
+          ><img src="img/Resources/instagram.png" alt="Instagram" class="social-icon"
+        /></a>
+        <a href="#"
+          ><img src="img/Resources/pinterest.png" alt="Pinterest" class="social-icon"
+        /></a>
+        <a href="#"
+          ><img src="img/Resources/twitter.png" alt="Twitter" class="social-icon"
+        /></a>
+      </div>
+      <div class="copyright">© 2025 EcoHive all right reserved</div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Terms and conditions</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+    </footer>
+  </body>
+</html>
